@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/seen-idc/reminder-bot#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "nanotimer": "^0.3.15"
   }
 }

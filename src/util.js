@@ -18,7 +18,7 @@ module.exports.timeUp = (args, msg) => {
     .setTitle('⏰ Time\'s Up!')
     .setDescription(`\`\`\`${args[0] ? args.join(' ') : 'No reason provided'}\`\`\`\n[\`[Original Message]\`](${msg.url})`)
   if (Math.floor((Math.random() * 10) + 1) > 5) {
-    embed.setFooter('There may be some desync with the timer due to the bot\'s ping or your internet connection\nIt\'s not recommended to use this for accurate timers')
+    embed.setFooter('There may be some desync with discord\'s servers')
   }
   return embed
 }

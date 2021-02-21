@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
 const fs = require('fs')
 const utility = require('./util')
+const NanoTimer = require('nanotimer')
 
+const timer = new NanoTimer()
 const client = new Discord.Client();
 function readConfig() {
   return JSON.parse(fs.readFileSync('./config.json').toString())
@@ -32,14 +34,13 @@ client.on('message', msg => {
     const embed = new Discord.MessageEmbed()
       .setColor('#606e8c')
       .setTitle('⏱Reminder')
-      .setDescription(`Reminding you in \`${timeInMS / 1000}\` seconds to:\n\`\`\`${args[0] ? args.join(' ') : 'No reason provided'}\`\`\``)
+      .setDescription(`Reminding you in \`${timeInMS / 1000}\` seconds:\n\`\`\`${args[0] ? args.join(' ') : 'No reason provided'}\`\`\``)
     msg.channel.send(embed)
     
-    let timeUp = utility.timeUp(args, msg)
-    setTimeout(() => {
-
-      msg.author.send(timeUp)
-    }, timeInMS)
+    
+    timer.setTimeout(() => {
+      msg.author.send(utility.timeUp(args, msg))
+    }, '',`${timeInMS}m`)
   }
 })
 

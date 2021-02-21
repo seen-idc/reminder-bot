@@ -1,0 +1,22 @@
+{
+  "name": "reminder-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seen-idc/reminder-bot.git"
+  },
+  "author": "seen-idc",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/seen-idc/reminder-bot/issues"
+  },
+  "homepage": "https://github.com/seen-idc/reminder-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
